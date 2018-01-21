@@ -103,12 +103,12 @@ async function getInfoAndSend() {
 <head>
   <style>
     table {border-color:#ccc; border-collapse: collapse;}
-    table th {font-size: 14px;}
-    table td {font-size: 12px;}
+    table th {font-size: 14px;border:1px #ccc solid;}
+    table td {font-size: 12px;border:1px #ccc solid;}
   </style>
 </head>
 <body>
-  <table border="1">
+  <table>
     <tr>
       <th>时间</th>
       <th>余额</th>
@@ -122,7 +122,7 @@ async function getInfoAndSend() {
   <td>${m.add}</td>
 </tr>`;
   });
-  html += "</table>";
+  html += "</table><br/><br/>";
 
   let now = new Date();
   let time12 = new Date();
@@ -132,11 +132,12 @@ async function getInfoAndSend() {
 
   let data = await getXmrData(pars.d);
 
-  html += `<table border="1">
-    <tr><th>24小时平均</th><td>${average(data, 24)} H/s</td></tr>
-    <tr><th>12小时平均</th><td>${average(data, 12)} H/s</td></tr>
-    <tr><th>1小时平均</th><td>${average(data, 1)} H/s</td></tr>
-  </table>
+  html += `<table>
+      <tr><th>24小时平均</th><td>${average(data, 24)} H/s</td></tr>
+      <tr><th>12小时平均</th><td>${average(data, 12)} H/s</td></tr>
+      <tr><th>1小时平均</th><td>${average(data, 1)} H/s</td></tr>
+    </table>
+  </body>
 </html>`;
   send(html);
 }
