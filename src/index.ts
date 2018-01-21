@@ -108,7 +108,7 @@ async function getInfoAndSend() {
 
   balanceList.map(m => {
     html += `<tr>
-  <th>${dateToString(m.time)}</th>
+  <td>${dateToString(m.time)}</td>
   <td>${toValue(m.balance.toString(), 12)}</td>
   <td>${add}</td>
 </tr>`;
