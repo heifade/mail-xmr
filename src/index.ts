@@ -99,12 +99,21 @@ async function getInfoAndSend() {
     balanceList.pop();
   }
 
-  let html = `<table>
-  <tr>
-    <th>时间</th>
-    <th>余额</th>
-    <th>变动</th>
-  </tr>`;
+  let html = `<html>
+<head>
+  <style>
+    table {border-color:#ccc; border-collapse: collapse;}
+    table th {font-size: 14px;}
+    table td {font-size: 12px;}
+  </style>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <th>时间</th>
+      <th>余额</th>
+      <th>变动</th>
+    </tr>`;
 
   balanceList.map(m => {
     html += `<tr>
@@ -123,11 +132,12 @@ async function getInfoAndSend() {
 
   let data = await getXmrData(pars.d);
 
-  html += `<table>
-  <tr><th>24小时平均</th><td>${average(data, 24)} H/s</td></tr>
-  <tr><th>12小时平均</th><td>${average(data, 12)} H/s</td></tr>
-  <tr><th>1小时平均</th><td>${average(data, 1)} H/s</td></tr>
-</table>`;
+  html += `<table border="1">
+    <tr><th>24小时平均</th><td>${average(data, 24)} H/s</td></tr>
+    <tr><th>12小时平均</th><td>${average(data, 12)} H/s</td></tr>
+    <tr><th>1小时平均</th><td>${average(data, 1)} H/s</td></tr>
+  </table>
+</html>`;
   send(html);
 }
 
