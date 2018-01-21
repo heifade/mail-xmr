@@ -110,7 +110,7 @@ async function getInfoAndSend() {
     html += `<tr>
   <td>${dateToString(m.time)}</td>
   <td>${toValue(m.balance.toString(), 12)}</td>
-  <td>${add}</td>
+  <td>${m.add}</td>
 </tr>`;
   });
   html += "</table";
