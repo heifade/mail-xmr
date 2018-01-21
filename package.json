@@ -1,0 +1,42 @@
+{
+  "name": "mail-xmr",
+  "version": "1.0.0-beta1",
+  "description": "mail-xmr",
+  "main": "./es/index.js",
+  "module": "./es/index.js",
+  "typings": "./es/index",
+  "files": [
+    "es"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heifade/mail-xmr.git"
+  },
+  "devDependencies": {
+    "@types/node": "^9.3.0",
+    "@types/node-fetch": "^1.6.7",
+    "@types/nodemailer": "^4.3.1",
+    "@types/nodemailer-smtp-transport": "^2.7.4",
+    "pcreate-config": "^1.1.2"
+  },
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "node-fetch": "^1.7.3",
+    "nodemailer": "^4.4.2",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "yargs": "^10.1.1"
+  },
+  "scripts": {
+    "build": "pcreate build",
+    "start": "pcreate build && node ./es/index.js",
+    "test": "pcreate test"
+  },
+  "keywords": [
+    "mail-xmr"
+  ],
+  "author": "heifade",
+  "license": "MIT",
+  "bin": {
+    "mail-xmr": "./es/bin/mail-xmr"
+  }
+}
