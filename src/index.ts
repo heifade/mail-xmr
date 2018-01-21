@@ -47,10 +47,10 @@ let pars = option("f", {
     type: "number"
   })
   .option("n", {
-    alias: "time",
+    alias: "frequency",
     demand: false,
     default: 60,
-    describe: "Please input time of send xmr info",
+    describe: "Please input frequency of send xmr info",
     type: "number"
   })
   .option("u", {
@@ -108,7 +108,6 @@ async function getInfoAndSend() {
 
     table.tbl-average { margin-top: 10px;}
     table.tbl-average th {text-align:left;}
-
   </style>
 </head>
 <body>
@@ -151,9 +150,11 @@ function getInfoAndSends() {
     .then()
     .catch();
 
-  setTimeout(() => {
-    getInfoAndSends();
-  }, 1000 * pars.n);
+  if (pars.n > 0) {
+    setTimeout(() => {
+      getInfoAndSends();
+    }, 1000 * pars.n);
+  }
 }
 
 getInfoAndSends();
