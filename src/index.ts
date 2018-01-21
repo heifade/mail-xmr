@@ -102,7 +102,7 @@ async function getInfoAndSend() {
   let html = `<html>
 <head>
   <style>
-    table {border-color:#ccc; border-collapse: collapse;}
+    table {border-collapse: collapse;}
     table th {font-size: 14px;border:1px #ccc solid;}
     table td {font-size: 12px;border:1px #ccc solid;}
   </style>
