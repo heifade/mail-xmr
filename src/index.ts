@@ -1,8 +1,8 @@
 import { option } from "yargs";
 import { sendMail, MailInfo } from "./mail";
 import chalk from "chalk";
-import { getXmrBalance, toValue } from "./xmr";
-import { dateToString } from "./util/util";
+import { getXmrBalance, getXmrData } from "./xmr";
+import { dateToString, toValue, average } from "./util/util";
 
 let pars = option("f", {
   alias: "fromEmailAddress",
@@ -114,6 +114,20 @@ async function getInfoAndSend() {
 </tr>`;
   });
   html += "</table";
+
+  let now = new Date();
+  let time12 = new Date();
+  time12.setHours(now.getHours() - 12);
+  let time1 = new Date();
+  time1.setHours(now.getHours() - 1);
+
+  let data = await getXmrData(pars.d);
+
+  html += `<br>24小时平均${average(data, 24)}`;
+  html += `<br>12小时平均${average(data, 12)}`;
+  html += `<br>1小时平均${average(data, 1)}`;
+
+  console.log(1, html);
 
   send(html);
 }
