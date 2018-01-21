@@ -127,8 +127,6 @@ async function getInfoAndSend() {
   html += `<br>12小时平均${average(data, 12)}`;
   html += `<br>1小时平均${average(data, 1)}`;
 
-  console.log(1, html);
-
   send(html);
 }
 
