@@ -105,6 +105,10 @@ async function getInfoAndSend() {
     table {border-collapse: collapse;}
     table th {font-size: 14px;border:1px #ccc solid; padding:2px}
     table td {font-size: 12px;border:1px #ccc solid; padding:2px}
+
+    table.tbl-average { margin-top: 10px;}
+    table.tbl-average th {text-align:left;}
+
   </style>
 </head>
 <body>
@@ -132,7 +136,7 @@ async function getInfoAndSend() {
 
   let data = await getXmrData(pars.d);
 
-  html += `<table>
+  html += `<table class="tbl-average">
       <tr><th>24小时平均</th><td>${average(data, 24)} H/s</td></tr>
       <tr><th>12小时平均</th><td>${average(data, 12)} H/s</td></tr>
       <tr><th>1小时平均</th><td>${average(data, 1)} H/s</td></tr>
