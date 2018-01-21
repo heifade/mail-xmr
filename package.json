@@ -1,6 +1,6 @@
 {
   "name": "mail-xmr",
-  "version": "1.0.0-beta14",
+  "version": "1.0.0-beta15",
   "description": "mail-xmr",
   "main": "./es/index.js",
   "module": "./es/index.js",
