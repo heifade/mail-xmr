@@ -127,12 +127,6 @@ async function getInfoAndSend() {
   });
   html += "</table>";
 
-  let now = new Date();
-  let time12 = new Date();
-  time12.setHours(now.getHours() - 12);
-  let time1 = new Date();
-  time1.setHours(now.getHours() - 1);
-
   let data = await getXmrData(pars.d);
 
   html += `<table class="tbl-average">
