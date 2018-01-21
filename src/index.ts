@@ -125,7 +125,7 @@ async function getInfoAndSend() {
   <td>${m.add}</td>
 </tr>`;
   });
-  html += "</table><br/><br/>";
+  html += "</table>";
 
   let now = new Date();
   let time12 = new Date();
