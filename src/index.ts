@@ -123,10 +123,13 @@ async function getInfoAndSend() {
 
   let data = await getXmrData(pars.d);
 
-  html += `<br>24小时平均${average(data, 24)}`;
-  html += `<br>12小时平均${average(data, 12)}`;
-  html += `<br>1小时平均${average(data, 1)}`;
-
+  html += `<table>
+  <tr>
+    <th>24小时平均</th><td>${average(data, 24)}</td>
+    <th>12小时平均</th><td>${average(data, 12)}</td>
+    <th>1小时平均</th><td>${average(data, 1)}</td>
+  </tr>
+</table>`;
   send(html);
 }
 
