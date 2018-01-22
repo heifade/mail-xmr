@@ -142,7 +142,9 @@ async function getInfoAndSend() {
 function getInfoAndSends() {
   getInfoAndSend()
     .then()
-    .catch();
+    .catch(e => {
+      console.log(`${dateToString(new Date())}，本次处理失败！${e}`);
+    });
 
   if (pars.n > 0) {
     setTimeout(() => {
